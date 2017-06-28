@@ -52,83 +52,132 @@
 
     <!--End off Preloader -->
 
-    <!-- Header -->
-    <!--<header>
+    <div id="mySidenav" class="sidenav hidden-sm hidden-md hidden-lg">
+            <ul>
+                <li class="sideMenu">
+                    <span>Categories <i class="accordion_icon fa fa-minus"></i></span>
+                    <ul class="sideMenuLv2">
+                        <li><a href="#">
+                                Some shit <button class=""><i class="accordion_icon fa fa-plus"></i></button>
+                            </a>
+                            <ul class="sideMenuLv3">
+                                <li><a href="#">Some thing inside shit</a></li>
+                                <li><a href="#">Some thing inside shit</a></li>
+                                <li><a href="#">Some thing inside shit</a></li>
+                                <li><a href="#">Some thing inside shit</a></li>
+                                <li><a href="#">Some thing inside shit</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Some shit</a></li>
+                        <li><a href="#">Some shit</a></li>
+                        <li><a href="#">Some shit</a></li>
+                        <li><a href="#">Some shit</a></li>
+                    </ul>
+                </li>
+                <li class="sideMenu">
+                    <span>Subsidiary <i class="accordion_icon fa fa-minus"></i></span>
+                    <ul class="sideMenuLv2">
+                        <li><a href="#">Some shit</a></li>
+                        <li><a href="#">Some shit</a></li>
+                        <li><a href="#">Some shit</a></li>
+                        <li><a href="#">Some shit</a></li>
+                        <li><a href="#">Some shit</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </div>
+
+    <div class="header">
         <div class="top_nav">
             <div class="container" id="top_nav  ">
                 <ul class="list-inline top-menu-tab">
-                    <li class="active"><a href="">home</a></li>
-                    <li class="item"><a href="#">products</a></li>
-                    <li class="item"><a href="#">services</a></li>
+                    <li class=""><a href="/home/index/main">home</a></li>
+                    <li class="item"><a href="/home/index/product">products</a></li>
+                    <li class="item"><a href="/services-2">Services</a></li>
                 </ul>
-                <ul class="list-inline info hidden-xs">
-                    <li><a href="#"><span class="fa fa-phone"></span> 1234 - 5678 - 9012</a></li>
-                    <li><a href="#"><span class="fa fa-envelope"></span> support@pos.com.my</a></li>
+                <ul class="list-inline info">
+                    <li><a href="tel:+60123456789012" data-rel="external"><span class="fa fa-phone"></span>  +60 1234 5678 9012</a></li>
+                    <li><a href="mailto:support@pos.com.my"><span class="fa fa-envelope"></span>  support@pos.com.my</a></li>
                 </ul>
-
             </div>
         </div>
-        <nav class="navbar bootsnav">
-
+        <!-- Top Navbar end -->
+        <!-- Navbar -->
+        <nav class="navbar bootsnav on no-full">
             <div class="container">
+                <div class="logo-top">
+                    <button class="c-hamburger c-hamburger--htx hidden-sm hidden-md hidden-lg" onclick="toggleSideMenu(this)">
+                        <span>toggle menu</span>
+                    </button>
+                    <a href="/home/index/main">
+                        <img title="" alt="eziemall" src="images/logo.png">
+                    </a>
+                    <div class="btn-search-mobile hidden-lg">
+                        <a href="#" class="btn-search"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <!--/.logo-top-->
                 <div class="attr-nav">
-                    <ul>
-                        <li class="searchArea hidden-sm hidden-md hidden-lg">
-                            <button type="button">
-                                <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                            </button>
-                        </li>
-                        <li class='searchArea hidden-xs'>
-                            <form>
+                    <div class="header-tools">
+                        <div class="header-tools-item searchArea hidden-xs hidden-sm hidden-md">
+
+                            <form action="/search" id="small-search-box-form" method="get" novalidate="novalidate">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Type your keywords..." />
+                                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                    <input type="text" class="form-control ui-autocomplete-input" id="small-searchterms" autocomplete="off" name="q" placeholder="Type your keywords...">
                                     <div class="input-group-btn">
-                                        <button type="button">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
+                                        <button type="submit">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
-                        </li>
-                        <li><a href="#">Sign in</a></li>
-                        <li><a href="#"><img src="images/icon/shop.png"></a></li>
-                    </ul>
+                        </div>
+                        <div class="header-tools-item header-cart">
+                            <a href="/cart">
+                                <img src="images/icon/shop.png">
+                            </a>
+                        </div>
+                        <!--<div class="header-tools-item sign-in">
+                            <a href="/login">Sign in</a>
+                        </div>-->
+                        <div class="header-tools-item account">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                   <img src="images/icon/profile.png">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><img src="images/icon/profile.png" class="profileMenu">My Account</a></li>
+                                    <li><a href="#"><img src="images/icon/wishlist.png" class="profileMenu">Wish List</a></li>
+                                    <li><a href="#"><img src="images/icon/logout.png" class="profileMenu">Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="navbar-header">
-                    <a class="navbar-brand" href=""><img class="logo" src="images/logo.png" alt=""></a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav menu">
-
-                    </ul>
-                </div>
+                <!--/ .attr-nav-->
             </div>
             <div class="top-search">
                 <div class="container">
-                    <form>
+
+                    <form action="/search" id="small-search-box-form" method="get" novalidate="novalidate">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Type your keywords..." />
+                            <input type="text" class="form-control" id="small-searchterms" autocomplete="off" name="q" placeholder="Type your keywords...">
                             <div class="input-group-btn">
-                                <button type="button">
-                                        Search
-                                    </button>
+                                <button type="submit">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="search-box hidden-sm hidden-md hidden-lg">
-
-            </div>
         </nav>
-    </header>-->
-    <!-- Header end -->
-
-
-
+        <!-- Navbar end -->
+    </div>
 
     <div id="product-page">
-        <section id="menu">
+        <section id="menu" class="hidden-xs">
             <div class="container">
                 <ul>
                     <li><img src="images/icon/menu-icon.png"></li>
@@ -138,22 +187,11 @@
                         </button>
                         <ul class="dropdown-menu menu1">
                             <li><a href="#">Some shit</a></li>
+                            <li><a href="#">Some shit</a></li>
                             <li>
                                 <a href="#">Some shit</a>
                                 <div class="sub-menu">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <a href="#">
-                                            <img src="images/test/1.png" class="img-responsive">
-                                            <h5>Some thing inside shit</h5>
-                                        </a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a href="#">
-                                            <img src="images/test/1.png" class="img-responsive">
-                                            <h5>Some thing inside shit</h5>
-                                        </a>
-                                        </div>
                                         <div class="col-md-4">
                                             <a href="#">
                                             <img src="images/test/1.png" class="img-responsive">
@@ -222,32 +260,27 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <a href="#">
-                                            <img src="images/test/1.png" class="img-responsive">
-                                            <h5>Some thing inside shit</h5>
+                                            <img src="data:image/png;base64,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" class="img-responsive">
                                         </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="#">
-                                            <img src="images/test/1.png" class="img-responsive">
-                                            <h5>Some thing inside shit</h5>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2B-aIzfEVtZAMqfNjpa6WLUU1jUCfDwoavAsVQKAPXQFRrC0cAg" class="img-responsive">
                                         </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="#">
-                                            <img src="images/test/1.png" class="img-responsive">
-                                            <h5>Some thing inside shit</h5>
+                                            <img src="http://myhuiai.com/wp-content/uploads/2017/04/v2poslaju1.png" class="img-responsive">
                                         </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="#">
-                                            <img src="images/test/1.png" class="img-responsive">
-                                            <h5>Some thing inside shit</h5>
+                                            <img src="data:image/png;base64,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" class="img-responsive">
                                         </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="#">
-                                            <img src="images/test/1.png" class="img-responsive">
-                                            <h5>Some thing inside shit</h5>
+                                            <img src="data:image/png;base64,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" class="img-responsive">
                                         </a>
                                 </div>
                             </div>
@@ -301,7 +334,7 @@
             </div>
         </section>
 
-        <section id="product-carousel">
+        <!--<section id="product-carousel">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -330,7 +363,7 @@
                 <span class="sr-only">Next</span>
                 </a>
             </div>
-        </section>
+        </section>-->
 
         <section id="section-2">
             <div class="container">

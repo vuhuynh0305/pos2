@@ -11,7 +11,6 @@
         -ms-user-select: none;
             user-select: none;
     background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
-    background: -webkit-linear-gradient(top, white, black);
     background: linear-gradient(to bottom, white, black);
 }@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
 
@@ -71,8 +70,7 @@ nav.navbar.bootsnav ul.nav > li > a,
 #contact_form .form-control,
 #contact_form .btn.submit_btn,
 footer a, .footer_social_icon .fa,
-.post .date,
-#scrollUp {
+.post .date, #product-page, .header, #mySidenav {
     transition: all 0.4s ease;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
@@ -263,6 +261,7 @@ nav.navbar.bootsnav {
     border: 0 none;
     width: 100%;
     border-bottom: 5px solid #e21a2d;
+    height: 135px;
 }
 
     nav.navbar.bootsnav .container,
@@ -323,8 +322,15 @@ nav.navbar.bootsnav {
         background: none;
     }
 
+    .header {
+        width: 100%;
+    }
+
 .header-tools {
     padding: 50px 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
     .header-tools a {
@@ -349,10 +355,20 @@ nav.navbar.bootsnav {
 }
 
     .header-tools-item.account .dropdown button {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+        border:none;
+        padding: 0;
+        outline: 0;
     }
+
+    .header-tools-item.account .dropdown button:focus {
+        background-color: #d63d65;
+    }
+
+    .header-tools-item.account .dropdown button:active {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
 
     .header-tools-item.account .open > .dropdown-menu {
         display: block !important;
@@ -360,13 +376,19 @@ nav.navbar.bootsnav {
 
     .header-tools-item.account .dropdown-menu {
         opacity: 1 !important;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         top: 150%;
         left: -115px;
         background: #fff;
         border: 1px solid #fff;
         padding: 0;
         width: 200px;
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    }
+
+    .header-tools-item.account .profileMenu {
+        width: 20%;
+        margin-right: 10px;
     }
     
         .header-tools-item.account .dropdown-menu a {
@@ -385,6 +407,9 @@ nav.navbar.bootsnav {
 
 .logo-top {
     float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
     .logo-top a,
@@ -392,9 +417,9 @@ nav.navbar.bootsnav {
         display: block;
     }
 
-    .logo-top a {
+    /*.logo-top a {
         padding: 17px 0;
-    }
+    }*/
 
 /* Carousel */
 #home #myCarousel .item .banner_hover_area {
@@ -405,7 +430,6 @@ nav.navbar.bootsnav {
     position: absolute;
     text-align: center;
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 #home #myCarousel .carousel-caption h1 {
@@ -451,7 +475,6 @@ nav.navbar.bootsnav {
 
     #detail .item div p:first-child {
         opacity: 0.5;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
         font-size: 14px;
         font-style: italic;
         display: block;
@@ -524,7 +547,6 @@ nav.navbar.bootsnav {
         color: #e21a2d;
         background: #f4f4f4;
         opacity: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         text-shadow: none;
     }
 
@@ -654,12 +676,10 @@ nav.navbar.bootsnav {
     position: absolute;
     text-align: center;
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
 .grid-item:hover .portfolio_hover_area {
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .portfolio_hover_area .fa {
@@ -739,7 +759,6 @@ nav.navbar.bootsnav {
         height: 100%;
         width: 100%;
         opacity: 1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     }
 
 .testimonial_area {
@@ -861,7 +880,6 @@ nav.navbar.bootsnav {
             padding-top: 15px;
             padding-bottom: 15px;
             opacity: 0.7;
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
             font-size: 14px;
         }
 
@@ -928,7 +946,8 @@ nav.navbar.bootsnav {
         margin: 8px;
         padding: 10px 20px;
         width: 250px;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
 
     #contact_form .form-inline textarea.form-control {
@@ -938,7 +957,8 @@ nav.navbar.bootsnav {
 
     #contact_form .form-control:focus {
         border: 2px solid #ffcb0f;
-        box-shadow: 0px 0px 5px 1px #ffcb0f;
+        -webkit-box-shadow: 0px 0px 5px 1px #ffcb0f;
+                box-shadow: 0px 0px 5px 1px #ffcb0f;
 }
 
     #contact_form .btn.submit_btn {
@@ -1038,7 +1058,7 @@ footer {
             margin-right: 8px;
         }
 /* ScrollUP */
-#scrollUp {
+/*#scrollUp {
     background: url(../images/top.png) no-repeat;
     bottom: 20px;
     color: #000;
@@ -1047,13 +1067,12 @@ footer {
     right: 20px;
     width: 40px;
     opacity: 0.7;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 
     #scrollUp:hover {
         background: url(../images/top.png) no-repeat scroll 0 -40px;
         background-size: contain;
-    }
+    }*/
 
 /*-----SERVICES PAGE------*/
 
@@ -1163,6 +1182,10 @@ footer {
 
 /*-----PRODUCT PAGE------*/
 
+#product-page {
+    width: 100%;
+}
+
 #product-page #menu .container > ul {
     padding: 0;
 }
@@ -1240,13 +1263,9 @@ footer {
     background-color: #fff;
     padding: 20px;
     display: block;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
-
-#product-page #menu .container .dropdown-menu.menu1 .sub-menu img {
-   height: 85px;
-}
-
 #product-page #menu .container .dropdown-menu.menu1 .sub-menu h5 {
    text-align: center;
 }
@@ -1254,11 +1273,12 @@ footer {
 #product-page #menu .container .dropdown-menu.menu2  {
     padding: 20px;
     width: 600px;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 
-#product-page #menu .container .dropdown-menu.menu2 img{
-   height: 100px;
+#product-page #menu .container .dropdown-menu.menu2 h5 {
+    text-align: center;
 }
 
 #product-page #section-1 .grid-sizer,
@@ -1522,9 +1542,9 @@ footer {
         line-height: 35px;
     }
 
-    .logo-top a {
+    /*.logo-top a {
         padding: 30px 0 20px;
-    }
+    }*/
 
     .logo-top a,
     .logo-top h1 {
@@ -1582,9 +1602,9 @@ footer {
             margin-left: -16px;
         }
 
-    .header-tools {
-        padding: 33px 0;
-    }
+    /*.header-tools {
+            padding: 20px 0;
+    }*/
 
     .list-inline.info {
         width: 60%;
@@ -1696,6 +1716,10 @@ footer {
 }
 
 @media (max-width: 479px) {
+    nav.navbar.bootsnav {
+        height: 75px;
+    }
+
     h1 {
         font-size: 30px;
         line-height: 32px;
@@ -1876,8 +1900,8 @@ footer {
         visibility: hidden;
     }
 
-    #product-page .grid-sizer,
-    #product-page .grid-item,
+    .grid-sizer,
+    .grid-item,
     #product-page .grid-item-width {
         width: 100% !important;
     }
@@ -1903,11 +1927,11 @@ footer {
 
     #detail .item div {
         height: auto;
-        padding: 10px;
+        padding: 5px;
     }
 
     #detail .item div p {
-        margin: 0 0 5px;
+        margin: 0;
     }
 
     #detail .owl-theme .owl-nav .owl-prev {
@@ -1922,4 +1946,295 @@ footer {
         border-width: 12px;
         margin-left: -12px;
     }
+
+    .header-tools-item.account .dropdown-menu {
+        top: 115%;
+        left: -150px;
+    }
+
+    .list-inline.top-menu-tab li {
+        width: 33.333%;
+        float: left;
+    }
+
+    .list-inline.top-menu-tab li a {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .sidenav {
+        height: auto;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .sidenav.activeSideMenu {
+        width: 250px;
+    }
+
+    .sidenav a {
+        padding: 8px 10px 8px 30px;
+        text-decoration: none;
+        font-size: 17px;
+        color: #e21a2d;
+        display: block;
+        transition: 0.3s;
+        border-bottom: 1px solid #f9f9f9;
+        font-weight: 400;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+     #mySidenav ul {
+         padding: 0;
+         margin: 0;
+     }
+
+    #mySidenav ul li {
+        list-style: none;
+    }
+
+    #mySidenav .sideMenu span {
+        position: relative;
+        font-size: 18px;
+        color: #fff;
+        background-color: #e21a2d;
+        display: block;
+        padding: 10px;
+    }
+
+     #mySidenav .sideMenu span i{
+        position: absolute;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        background-color: #b2101f;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 3px;
+    }
+
+    #mySidenav .sideMenu span i:before{
+        vertical-align: middle;
+    }
+
+    #mySidenav .sideMenu span i.fa-plus:before{
+        content: "\f067" !important;
+    }
+
+    #mySidenav .sideMenu .sideMenuLv2 a {
+        position: relative;
+    }
+
+    #mySidenav .sideMenu .sideMenuLv2 a button {
+        position: absolute;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        padding: 0;
+        background-color: #e7e7e7;
+        border-radius: 3px;
+        border: 0;
+        color: #fff;
+    }
+
+    #mySidenav .sideMenu .sideMenuLv2 li:last-child a {
+        border-bottom: 0;
+    }
+
+    #mySidenav .sideMenu .sideMenuLv2 .sideMenuLv3 {
+        display: none;
+        background-color: #e7e7e7;
+    }
+
+    #mySidenav .sideMenu .sideMenuLv2 .sideMenuLv3 li a {
+        padding-left: 45px;
+    }
+
+    .activeSideMenu:not(.sidenav) {
+        margin-left: 250px; 
+    }
+
+    .c-hamburger {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 25px;
+        height: 25px;
+        font-size: 0;
+        text-indent: -9999px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .c-hamburger:focus {
+        outline: none;
+    }
+
+    .c-hamburger span {
+        display: block;
+        position: absolute;
+        top: 10px;
+        height: 3px;
+        width: 100%;
+        background: #3a3a3a;
+    }
+
+    .c-hamburger span::before,
+    .c-hamburger span::after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #3a3a3a;
+        content: "";
+    }
+
+    .c-hamburger span::before {
+        top: -7px;
+    }
+
+    .c-hamburger span::after {
+        bottom: -7px;
+    }
+
+    .c-hamburger--htx {
+        background-color: #fff;
+        padding: 12px 0;
+    }
+
+.c-hamburger--htx span {
+  transition: background 0s 0.3s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown.open {
+    position: static;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown.open .menu2 {
+    display:table; 
+    width: 90%; 
+    text-align: center; 
+    left:5%; 
+    right:0;
+    top:40%;
+	background: #fff;
+	border: 2px solid #dc192c;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown.open .menu2:after,
+#product-page #menu .container ul li:nth-child(3).dropdown.open .menu2:before {
+    bottom: 100%;
+	left: 20%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown.open .menu2:after {
+    border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #fff;
+	border-width: 15px;
+	margin-left: -15px;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown.open .menu2:before {
+    border-color: rgba(220, 25, 44, 0);
+	border-bottom-color: #dc192c;
+	border-width: 18px;
+	margin-left: -18px;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 > li { 
+    display: table-cell; 
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 [class*="col-"] { 
+    height: 150px;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 [class*="col-"]:nth-child(3),
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 [class*="col-"]:nth-child(6) { 
+    border-right: 0;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 [class*="col-"]:nth-child(4),
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 [class*="col-"]:nth-child(5),
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 [class*="col-"]:nth-child(6) { 
+    border-bottom: 0;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 [class*="col-"] img{ 
+    height: 75%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#product-page #menu .container ul li:nth-child(3).dropdown .menu2 .row{ 
+    margin: 0;
 }

@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function () {
-     $('#navbar-menu').find('a[href*="#"]:not([href="#"])').click(function () {
+    $('#navbar-menu').find('a[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -24,7 +24,7 @@ $(document).ready(function () {
     cloneCarouselItem();
 
     // Scroll to top of page
-    scrollUp();
+    // scrollUp();
 
     // Start banner in main page
     slideBanner();
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     // Highlight current menu
     activeMenu();
-    
+
     // Show or hide grid item in product page
     toggleProductPageGrid();
 
@@ -95,7 +95,7 @@ function slideBanner() {
         items: 1,
         slideSpeed: 2000,
         nav: false,
-        autoplay: true,
+        autoplay: false,
         dots: false,
         loop: true,
         responsiveRefreshRate: 200
@@ -112,6 +112,8 @@ function slideBanner() {
             nav: true,
             smartSpeed: 200,
             slideSpeed: 500,
+            autoplay: false,
+            loop: true,
             margin: 5,
             responsive: {
                 0: {
@@ -305,6 +307,36 @@ function toTop() {
 }
 
 function setDropDownMenuHeight() {
-    var subMenuHeight = $('#product-page #menu .dropdown .dropdown-menu.menu1 .sub-menu').actual('innerHeight');
-    $('#product-page #menu .dropdown .dropdown-menu.menu1').height(subMenuHeight);
+    var menu = $('#product-page #menu .dropdown .dropdown-menu.menu1');
+    var subMenu = $('#product-page #menu .dropdown .dropdown-menu.menu1 .sub-menu');
+    var menuHeight = menu.actual('innerHeight');
+    var subMenuHeight = 0;
+    $('#product-page #menu .dropdown .dropdown-menu.menu1 li').each(function () {
+        var currentHeight = $(this).children('.sub-menu').actual('innerHeight');
+        subMenuHeight = currentHeight > subMenuHeight ? currentHeight : subMenuHeight;
+    })
+    if (menuHeight > subMenuHeight) {
+        subMenu.height(menuHeight - 40);
+    }
+    else {
+        menu.height(subMenuHeight);
+        subMenu.height(subMenuHeight - 40);
+    }
 }
+
+function toggleSideMenu(button) {
+    $(button).toggleClass('is-active');
+    $('#mySidenav').toggleClass('activeSideMenu');
+    $('#product-page').toggleClass('activeSideMenu');
+    $('.header').toggleClass('activeSideMenu');
+}
+
+$('.sideMenu span').click(function() {
+    $(this).next('.sideMenuLv2').slideToggle('slow');
+    $(this).find('i').toggleClass('fa-plus')
+})
+
+$('.sideMenuLv2 a button').click(function() {
+    $(this).closest('li').find('.sideMenuLv3').slideToggle('slow');
+    $(this).find('i').toggleClass('fa-minus')
+})
